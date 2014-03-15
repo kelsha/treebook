@@ -1,0 +1,37 @@
+<%= form_for(@status) do |f| %>
+  <% if @status.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@status.errors.count, "error") %> prohibited this status from being saved:</h2>
+
+      <ul>
+      <% @status.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :invoke %><br>
+    <%= f.text_field :invoke %>
+  </div>
+  <div class="field">
+    <%= f.label :active %><br>
+    <%= f.text_field :active %>
+  </div>
+  <div class="field">
+    <%= f.label :record %><br>
+    <%= f.text_field :record %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
